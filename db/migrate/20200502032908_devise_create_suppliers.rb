@@ -5,9 +5,10 @@ class DeviseCreateSuppliers < ActiveRecord::Migration[5.0]
     create_table :suppliers do |t|
       t.belongs_to :address
       
-      t.integer :cnpj
-      t.integer :phone
+      t.string :cnpj
+      t.string :phone
       t.string :company_name
+      t.string :photo
 
       ## Database authenticatable
       t.string :email,              null: false, default: ""

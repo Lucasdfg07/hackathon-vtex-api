@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20200502034237) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
+    t.string   "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -40,7 +41,8 @@ ActiveRecord::Schema.define(version: 20200502034237) do
   end
 
   create_table "clients", force: :cascade do |t|
-    t.integer  "phone"
+    t.string   "phone"
+    t.string   "photo"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -73,22 +75,25 @@ ActiveRecord::Schema.define(version: 20200502034237) do
   create_table "products", force: :cascade do |t|
     t.integer  "category_id"
     t.integer  "supplier_id"
+    t.integer  "in_market"
     t.string   "name"
     t.float    "value"
     t.boolean  "in_stock"
     t.integer  "quantity"
-    t.float    "comission"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.float    "comission",   default: 0.0
+    t.string   "photo"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.index ["category_id"], name: "index_products_on_category_id", using: :btree
     t.index ["supplier_id"], name: "index_products_on_supplier_id", using: :btree
   end
 
   create_table "suppliers", force: :cascade do |t|
     t.integer  "address_id"
-    t.integer  "cnpj"
-    t.integer  "phone"
+    t.string   "cnpj"
+    t.string   "phone"
     t.string   "company_name"
+    t.string   "photo"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

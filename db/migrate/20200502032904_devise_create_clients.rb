@@ -3,7 +3,8 @@
 class DeviseCreateClients < ActiveRecord::Migration[5.0]
   def change
     create_table :clients do |t|
-      t.integer :phone
+      t.string :phone
+      t.string :photo
       
       ## Database authenticatable
       t.string :email,              null: false, default: ""
