@@ -6,9 +6,9 @@ class Api::V1::CategoriesController < ApplicationController
   end
 
   def create
-  	@category = Category.new
+  	@category = Category.new(category_params)
 
-	head :ok if @category.save
+	  head :ok if @category.save
   end
 
   def destroy
@@ -22,6 +22,6 @@ class Api::V1::CategoriesController < ApplicationController
   end
 
   def category_params
-  	params.require(:category).permit(:name)
+  	params.require(:category).permit(:name, :photo)
   end
 end
