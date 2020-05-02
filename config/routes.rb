@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :suppliers, controllers: { sessions: "suppliers/sessions", registrations: "suppliers/registrations" }
-  devise_for :clients, controllers: { sessions: "clients/sessions", registrations: "clients/registrations" }
+  devise_for :suppliers, controllers: { registrations: "suppliers/registrations" }
+  devise_for :clients, controllers: { registrations: "clients/registrations" }
   
   namespace 'api', :defaults => { :format => :json } do
   	namespace 'v1' do
@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   		resources :cities
   		resources :clients
   		resources :orders
+      resources :product_orders
 
   		resources :products do
         collection do

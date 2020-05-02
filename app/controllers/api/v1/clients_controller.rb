@@ -2,7 +2,7 @@ class Api::V1::ClientsController < ApplicationController
   before_action :set_client, only: [:update, :destroy]
 
   def index
-    @clientes = Client.all
+    @clients = Client.all
   end
 
   def create
