@@ -1,18 +1,18 @@
 class Api::V1::OrdersController < ApplicationController
-  before_action :set_order, only: [:update, :destroy]
+  before_action :set_order, only: [:destroy]
 
   def index
-    @orderes = current_user.orders
+    @orders = current_user.orders
   end
 
   def create
     @order = Order.new(order_params)
-    
-  	head :ok if @order.save
-  end
 
-  def update
-  	head :ok if @order.update(order_params)
+    head :ok if @order.save
+    
+    params[:products].each do |product|
+      ProductOrder.create(product_id: product.id, order_id: @order.id, quantity: params[:quantity])
+    end
   end
 
   def destroy
