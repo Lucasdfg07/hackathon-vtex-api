@@ -1,10 +1,10 @@
 tmp_dir = Rails.root.join("tmp")
 
 # Creating some categories 
-Category.create([{name: 'Camisas', photo: "#{tmp_dir}/images/products/camisa.jpg"},
-				{name: 'Shorts', photo: "#{tmp_dir}/images/products/shorts.jpg"},
-				{name: 'Tênis', photo: "#{tmp_dir}/images/products/tenis.jpg"},
-				{name: 'Bonés', photo: "#{tmp_dir}/images/products/chapeu.jpeg"}])
+Category.create([{name: 'Camisas', photo: "#{tmp_dir}/images/categories/camisa.jpg"},
+				{name: 'Shorts', photo: "#{tmp_dir}/images/categories/shorts.jpg"},
+				{name: 'Tênis', photo: "#{tmp_dir}/images/categories/tenis.jpg"},
+				{name: 'Bonés', photo: "#{tmp_dir}/images/categories/chapeu.jpeg"}])
 
 # Create Supplier
 Supplier.create(cnpj: '12312312312312', phone: '22997263552', 
