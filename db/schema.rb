@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20200502034237) do
   end
 
   create_table "clients", force: :cascade do |t|
+    t.string   "name"
     t.string   "phone"
     t.string   "photo"
     t.string   "email",                  default: "", null: false
@@ -89,7 +90,6 @@ ActiveRecord::Schema.define(version: 20200502034237) do
   end
 
   create_table "suppliers", force: :cascade do |t|
-    t.integer  "address_id"
     t.string   "cnpj"
     t.string   "phone"
     t.string   "company_name"
@@ -101,7 +101,6 @@ ActiveRecord::Schema.define(version: 20200502034237) do
     t.datetime "remember_created_at"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.index ["address_id"], name: "index_suppliers_on_address_id", using: :btree
     t.index ["email"], name: "index_suppliers_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_suppliers_on_reset_password_token", unique: true, using: :btree
   end

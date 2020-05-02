@@ -3,8 +3,6 @@
 class DeviseCreateSuppliers < ActiveRecord::Migration[5.0]
   def change
     create_table :suppliers do |t|
-      t.belongs_to :address
-      
       t.string :cnpj
       t.string :phone
       t.string :company_name
