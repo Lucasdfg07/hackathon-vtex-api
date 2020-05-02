@@ -47,3 +47,11 @@ Product.create([{name: 'Chapeu Praia', value: '20',
 				in_stock: true, quantity: 72, comission: 0, supplier_id: 1, in_market: 1, photo: "#{tmp_dir}/images/products/chapeu1.jpg"},
 				{name: 'Boné Aba Circular', value: '15',
 				in_stock: false, quantity: 154, comission: 25, supplier_id: 2, in_market: 1, photo: "#{tmp_dir}/images/products/chapeu2.jpeg"}])
+
+# Cities
+City.create([{name: 'São José dos Campos'},
+			 {name: 'São Paulo'},
+			 {name: 'Rio de Janeiro'},
+			 {name: 'Gramado'},
+			 {name: 'Campos do Jordão'},
+			 {name: 'Campos dos Goytacazes'}])
