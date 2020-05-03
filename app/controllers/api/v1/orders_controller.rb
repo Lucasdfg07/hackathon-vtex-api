@@ -11,7 +11,7 @@ class Api::V1::OrdersController < ApplicationController
     head :ok if @order.save
     
     params[:products].each do |product|
-      ProductOrder.create(product_id: product.id, order_id: @order.id, quantity: params[:product][:quantity])
+      ProductOrder.create(product_id: product.id, order_id: @order.id, quantity: params[:product][:quantity_order])
     end
   end
 
